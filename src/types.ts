@@ -1,21 +1,19 @@
+export interface User {
+  username: string;
+  password: string;
+}
+
 export interface Transaction {
   id: string;
-  amount: number;
   description: string;
-  category: string;
+  amount: number;
   type: 'income' | 'expense';
   date: string;
-}
-
-export interface Category {
-  id: string;
-  name: string;
-  color: string;
-}
-
-export interface Budget {
-  id: string;
+  userId: string;
   category: string;
-  amount: number;
-  spent: number;
+}
+
+export interface UserBudget {
+  userId: string;
+  transactions: Transaction[];
 }
